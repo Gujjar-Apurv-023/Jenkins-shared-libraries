@@ -1,5 +1,5 @@
 def call(imageName) {
     sh """
-    docker build -t ${imageName}:latest .
+    docker build --pull -t ${imageName}:latest .
     """
 }
