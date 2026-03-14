@@ -3,7 +3,9 @@ def call(config) {
     sh """
     helm upgrade --install ${config.releaseName} ${config.chartPath} \
     --namespace ${config.namespace} \
-    -f ${config.valuesFile}
+    -f ${config.valuesFile} \
+    --wait \
+    --timeout 5m
     """
 
 }
