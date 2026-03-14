@@ -5,8 +5,9 @@ def call(config) {
     --namespace ${config.namespace} \
     --create-namespace \
     -f ${config.valuesFile} \
+    --set image.tag=${config.tag} \
     --wait \
-    --timeout 5m
+    --timeout 1m
     """
 
 }
