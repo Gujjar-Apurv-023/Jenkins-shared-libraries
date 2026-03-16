@@ -7,8 +7,7 @@ def call(config) {
     -f ${config.valuesFile} \
     --set image.tag=${config.tag} \
     --wait \
-    --timeout 3m \
-    --atomic
+    --timeout 1m
     """
 
 }
