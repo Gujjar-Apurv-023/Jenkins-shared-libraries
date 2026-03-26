@@ -1,6 +1,10 @@
 def call(config) {
 
     sh """
+    echo "Deploying release: ${config.releaseName}"
+    echo "Namespace: ${config.namespace}"
+    echo "Image tag: ${config.tag}"
+
     helm upgrade --install ${config.releaseName} ${config.chartPath} \
     --namespace ${config.namespace} \
     --create-namespace \
@@ -9,5 +13,4 @@ def call(config) {
     --wait \
     --timeout 3m
     """
-
 }
